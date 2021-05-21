@@ -19,6 +19,7 @@ form.addEventListener('submit', event => {
         document.querySelector("#car-field").classList.add('input-valid')
         document.querySelector(".input-group").classList.add('input-valid')
         document.querySelector("#days-field").classList.add('input-valid')
+        document.querySelector("#cvv-field").classList.add('input-valid')
     }
     // console.log('content inside email input', emailInput.value)
 })
@@ -51,3 +52,4 @@ function validateDate () {
         formIsValid = true
     }
 }
+
