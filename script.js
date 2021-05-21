@@ -8,6 +8,7 @@ const carYearInput = document.querySelector("#car-year")
 const daysInput = document.querySelector("#days")
 
 
+
 // runs all functions for validating the different fields
 form.addEventListener('submit', event => {
     event.preventDefault()
@@ -15,11 +16,16 @@ form.addEventListener('submit', event => {
     validateDate()
 
     if (formIsValid) {
+        const total = document.createElement('div')
+        let totalCost = daysInput.value * 5
         // make the input label and border of the input green by adding input-valid on the parent div
         document.querySelector("#car-field").classList.add('input-valid')
         document.querySelector(".input-group").classList.add('input-valid')
         document.querySelector("#days-field").classList.add('input-valid')
         document.querySelector("#cvv-field").classList.add('input-valid')
+
+        document.querySelector('#total').appendChild(total).innerHTML = "The total cost is $" + totalCost + "."
+
     }
     // console.log('content inside email input', emailInput.value)
 })
