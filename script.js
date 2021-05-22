@@ -6,8 +6,8 @@ let formIsValid
 const form = document.querySelector("#parking-form")
 const carYearInput = document.querySelector("#car-year")
 const daysInput = document.querySelector("#days")
-const ccInput = document.querySelector("#credit-card")
 const ccNumber = document.querySelector('input[id="credit-card"]')
+const expDate = document.querySelector('input[id="expiration"]')
 
 
 // runs all functions for validating the different fields
@@ -16,6 +16,7 @@ form.addEventListener('submit', event => {
     validateCarYear()
     validateDate()
     validateCardNumber()
+    validateExpirationDate()
 
     if (formIsValid) {
         const total = document.createElement('div')
@@ -27,6 +28,7 @@ form.addEventListener('submit', event => {
         document.querySelector("#cvv-field").classList.add('input-valid')
         document.querySelector("#credit-card-field").classList.add('input-valid')
         document.querySelector("#name-field").classList.add('input-valid')
+        document.querySelector("#expiration-field").classList.add('input-valid')
 
         document.querySelector('#total').appendChild(total).innerHTML = "The total cost is $" + totalCost + "."
 
@@ -95,6 +97,16 @@ function luhnCheck(val) {
 // end of cc check
 
 
+function validateExpirationDate () {
+    let regex = new RegExp("^(0[1-9]|1[0-2])\/?([0-9]{2})$")
+    if (!regex.test(expDate.value) == true) {
+        document.querySelector("#expiration-field").classList.add('input-invalid')
+        formIsValid = false
+    }
+    else {
+        formIsValid = true
+    }
+}
 
 
 
