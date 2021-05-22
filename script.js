@@ -76,11 +76,6 @@ function validateCardNumber() {
     } else if (!regex.test(ccNumber.value) == false && luhnCheck(ccNumber.value) == true){
         formIsValid = true
     }
-
-
-    console.log(!regex.test(ccNumber.value))
-    console.log(ccNumber.value)
-    console.log(luhnCheck(ccNumber.value))
 }
 
 function luhnCheck(val) {
@@ -101,18 +96,15 @@ function luhnCheck(val) {
 
 
 
-// document.addEventListener ('click', event => {
-//     console.log(days.value)
-// })
 
 
 
 
 
-// valid cc number = 4111111111111111
 
 
-//  STEP 5 NONESENSE THAT DOES NOT WORK YET AND IS VERY BAD LMAO    
+
+//  BELOW IS STEP 5 NONESENSE THAT DOES NOT WORK YET AND IS VERY BAD LMAO    
 
 // let dateControl = document.querySelector('input[type="date"]')
 // let myDate = new Date(dateControl)
