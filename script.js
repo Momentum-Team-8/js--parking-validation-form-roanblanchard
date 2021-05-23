@@ -39,7 +39,7 @@ form.addEventListener('submit', event => {
 
 // checks if the car year is greater than 1900
 function validateCarYear () {
-    if (carYearInput.value < 1900 ) {
+    if (carYearInput.value < 1900 || carYearInput.value > 2021 ) {
         const error = document.createElement('div')
 
         // make the input label and border of the input red by adding input-valid on the parent div
