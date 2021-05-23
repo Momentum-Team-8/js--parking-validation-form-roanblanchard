@@ -102,14 +102,16 @@ function validateExpirationDate () {
     if (!regex.test(expDate.value) == true) {
         document.querySelector("#expiration-field").classList.add('input-invalid')
         formIsValid = false
-    }
-    else {
+    } else if (expDate.value[1] < 5 || expDate.value[4] < 1) {
+        // sloppy, does not work totally right, I will make it better later lmao but hey it kinda works for now  ¯\_(ツ)_/¯
+        const error = document.createElement('div')
+        document.querySelector("#expiration-field").classList.add('input-invalid')
+        document.querySelector('#expiration-field').appendChild(error).innerHTML = 'Expiration date cannot be in the past.'
+        formIsValid = false
+    } else {
         formIsValid = true
     }
 }
-
-
-
 
 
 
